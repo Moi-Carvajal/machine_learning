@@ -1,0 +1,82 @@
+# Si necesitan que explique cualquiera de los programas, con mucho gusto lo puedo explicar #
+ 
+------------------------------------- PROBLEMA 1 -------------------------------------------
+
+cadena = str(input("Ingresa Un Texto: "))
+
+longitud = len(cadena)
+longitudVariable = longitud
+contador = ""
+
+for i in range (0, longitud):
+    
+    letra = cadena[longitudVariable-1]
+    contador = contador + letra
+    
+    longitudVariable -= 1
+
+print(contador)
+ ------------------------------------- PROBLEMA 2 -------------------------------------------
+
+print("> Convertir Binario A Decimal")
+
+binario = str(input("> Cual Es El Número: "))
+
+binarioLongitud = len(binario)
+exponente = binarioLongitud
+ciclo = exponente
+contador = 0
+
+while ciclo >= 1:
+    
+    residuo = int(binario) - 10 ** (int(exponente) - 1)
+    restaBinarioResiduo = int(binario) - residuo
+    division = 10 ** (int(exponente)-1) / int(restaBinarioResiduo)
+    convertirNumeroIndividual = int(division) * 2 ** (int(exponente)-1)
+    nuevoResiduo = str(residuo)
+    
+    contador = contador + convertirNumeroIndividual
+    
+    residuoTexto = str(residuo)
+    exponente = len(residuoTexto)
+    binario = residuo
+    ciclo = len(nuevoResiduo)
+    
+    ciclo -= 1
+
+if residuo == 0:
+    
+    print("Resultado: " , contador)
+    
+else:
+    
+    residuo = int(binario) - 10 ** (int(exponente) - 1)
+    restaBinarioResiduo = int(binario) - residuo
+    division = 10 ** (int(exponente)-1) / int(restaBinarioResiduo)
+    convertirNumeroIndividual = int(division) * 2 ** (int(exponente)-1)
+    nuevoResiduo = str(residuo)
+    
+    contador = contador + convertirNumeroIndividual
+    
+    print("Resultado: " , contador)
+    
+    ------------------------------------- PROBLEMA 3 -------------------------------------------
+    
+def maximo(a,b):
+    if a>b:
+        return a
+    else:
+        return b
+    
+    
+def minimo(a,b):
+    if a<b:
+        return a
+    else:
+        return b
+    
+    
+x = int(input("Un número: "))
+y = int(input("Otro número: "))
+
+print(maximo(x-3, minimo(x+2, y-5)))
